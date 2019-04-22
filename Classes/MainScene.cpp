@@ -22,5 +22,8 @@ bool MainScene::init() {
     auto paddle = Paddle::create();
     addChild(paddle);
     
+    auto paddleListener = Paddle::createTouchListener(paddle);
+    getEventDispatcher()->addEventListenerWithSceneGraphPriority(paddleListener, this);
+    
     return true;
 }

@@ -12,5 +12,6 @@
 class Paddle {
 public:
     static cocos2d::Node* create();
+    static cocos2d::EventListener* createTouchListener(cocos2d::Node* paddle);
 };
 #endif /* Paddle_hpp */

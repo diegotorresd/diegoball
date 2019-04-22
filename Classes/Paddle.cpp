@@ -13,3 +13,25 @@ Node* Paddle::create() {
     paddle->setPosition(Vec2(240, 10));
     return paddle;
 }
+
+EventListener* Paddle::createTouchListener(Node* paddle) {
+    auto listener1 = EventListenerTouchOneByOne::create();
+    listener1->setSwallowTouches(true);
+    listener1->onTouchBegan = [=](Touch* touch, Event* event) {
+        return true;
+    };
+    
+    listener1->onTouchMoved = [=](Touch* touch, Event* event){
+        auto d = touch->getDelta();
+        auto pos = paddle->getPosition();
+        paddle->setPosition(Vec2(pos.x + d.x, pos.y));
+        return true;
+    };
+    
+    // trigger when you let up
+    listener1->onTouchEnded = [=](Touch* touch, Event* event){
+        return true;
+    };
+    
+    return listener1;
+}
