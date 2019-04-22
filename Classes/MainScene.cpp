@@ -6,6 +6,7 @@
 //
 
 #include "MainScene.hpp"
+#include "Paddle.hpp"
 
 USING_NS_CC;
 
@@ -17,5 +18,9 @@ Scene* MainScene::createScene()
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
     getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    
+    auto paddle = Paddle::create();
+    addChild(paddle);
+    
     return true;
 }

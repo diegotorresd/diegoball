@@ -24,3 +24,10 @@ DerivedData/
 !default.perspectivev3
 
 .DS_Store
+
+# Automatic backup files
+*~.nib/
+*.swp
+*~
+*.dat
+*.dep
