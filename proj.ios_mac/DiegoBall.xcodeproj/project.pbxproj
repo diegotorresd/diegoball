@@ -13,6 +13,8 @@
 		05B614A1226DBEB50075F379 /* MainScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B6149E226DBEB50075F379 /* MainScene.cpp */; };
 		05B614A4226DC1480075F379 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B614A2226DC1480075F379 /* Paddle.cpp */; };
 		05B614A5226DC1480075F379 /* Paddle.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B614A2226DC1480075F379 /* Paddle.cpp */; };
+		05B614A8226DC9C80075F379 /* Border.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B614A6226DC9C80075F379 /* Border.cpp */; };
+		05B614A9226DC9C80075F379 /* Border.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B614A6226DC9C80075F379 /* Border.cpp */; };
 		1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1A88B2631FC3D9C9005C14AE /* Images.xcassets */; };
 		1AC6FB21180E996B004C840B /* libcocos2d Mac.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FAF9180E9839004C840B /* libcocos2d Mac.a */; };
 		1AC6FB30180E99EB004C840B /* libcocos2d iOS.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AC6FB07180E9839004C840B /* libcocos2d iOS.a */; };
@@ -105,6 +107,8 @@
 		05B6149F226DBEB50075F379 /* MainScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = MainScene.hpp; sourceTree = "<group>"; };
 		05B614A2226DC1480075F379 /* Paddle.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Paddle.cpp; sourceTree = "<group>"; };
 		05B614A3226DC1480075F379 /* Paddle.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Paddle.hpp; sourceTree = "<group>"; };
+		05B614A6226DC9C80075F379 /* Border.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Border.cpp; sourceTree = "<group>"; };
+		05B614A7226DC9C80075F379 /* Border.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Border.hpp; sourceTree = "<group>"; };
 		1A88B2631FC3D9C9005C14AE /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1AC6FAE5180E9839004C840B /* cocos2d_libs.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = cocos2d_libs.xcodeproj; path = ../cocos2d/build/cocos2d_libs.xcodeproj; sourceTree = "<group>"; };
 		1ACB3243164770DE00914215 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = ../../cocos2dx/platform/third_party/ios/libraries/libcurl.a; sourceTree = "<group>"; };
@@ -295,6 +299,8 @@
 				05B6149F226DBEB50075F379 /* MainScene.hpp */,
 				05B614A2226DC1480075F379 /* Paddle.cpp */,
 				05B614A3226DC1480075F379 /* Paddle.hpp */,
+				05B614A6226DC9C80075F379 /* Border.cpp */,
+				05B614A7226DC9C80075F379 /* Border.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -459,6 +465,7 @@
 				1AF87B781F6F77F7007BE51C /* AppController.mm in Sources */,
 				05B614A4226DC1480075F379 /* Paddle.cpp in Sources */,
 				1AF87B8B1F6F782A007BE51C /* RootViewController.mm in Sources */,
+				05B614A8226DC9C80075F379 /* Border.cpp in Sources */,
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
 				05B614A0226DBEB50075F379 /* MainScene.cpp in Sources */,
@@ -472,6 +479,7 @@
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				05B614A5226DC1480075F379 /* Paddle.cpp in Sources */,
 				05B614A1226DBEB50075F379 /* MainScene.cpp in Sources */,
+				05B614A9226DC9C80075F379 /* Border.cpp in Sources */,
 				503AE10517EB98FF00D1A890 /* main.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

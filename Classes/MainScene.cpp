@@ -7,6 +7,7 @@
 
 #include "MainScene.hpp"
 #include "Paddle.hpp"
+#include "Border.hpp"
 
 USING_NS_CC;
 
@@ -24,6 +25,10 @@ bool MainScene::init() {
     
     auto paddleListener = Paddle::createTouchListener(paddle);
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(paddleListener, this);
+    
+    auto visibleSize = Director::getInstance()->getVisibleSize();
+    auto border = Border::create(visibleSize);
+    addChild(border);
     
     return true;
 }
