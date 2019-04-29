@@ -19,6 +19,10 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(MainScene);
+    
+    // paddle callbacks
+    void paddleMoved(cocos2d::Vec2 pos);
+    void paddleMoveEnd(float amount);
 };
 
 #endif /* MainScene_hpp */

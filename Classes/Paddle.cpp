@@ -16,7 +16,7 @@ Node* Paddle::create() {
     return paddle;
 }
 
-EventListener* Paddle::createTouchListener(Node* paddle) {
+EventListener* Paddle::createTouchListener(Node* paddle, MainScene* scene) {
     auto listener1 = EventListenerTouchOneByOne::create();
     listener1->setSwallowTouches(true);
     listener1->onTouchBegan = [=](Touch* touch, Event* event) {
@@ -30,12 +30,15 @@ EventListener* Paddle::createTouchListener(Node* paddle) {
         /// TODO: extract position constants
         x = MAX(40, x);
         x = MIN(x, 440);
-        paddle->setPosition(Vec2(x, pos.y));
+        auto newPos = Vec2(x, pos.y);
+        paddle->setPosition(newPos);
+        scene->paddleMoved(newPos);
         return true;
     };
     
     // trigger when you let up
     listener1->onTouchEnded = [=](Touch* touch, Event* event){
+        scene->paddleMoveEnd(0.5f);
         return true;
     };
     
