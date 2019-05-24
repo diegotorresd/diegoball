@@ -26,6 +26,7 @@ bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
     gameState = new GameState();
     getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
+    getPhysicsWorld()->setGravity(Vec2(0.0f, -0.5f));
     
     paddle = Paddle::create();
     addChild(paddle);
@@ -38,6 +39,7 @@ bool MainScene::init() {
     
     auto visibleSize = Director::getInstance()->getVisibleSize();
     auto border = Border::create(visibleSize);
+    
     addChild(border);
     
     return true;
@@ -52,7 +54,7 @@ void MainScene::paddleMoved(Vec2 pos) {
 void MainScene::paddleMoveEnd(float amount) {
     if (gameState->isBallFree() == false) {
         log("move %f", amount);
-        ball->getPhysicsBody()->applyImpulse(Vec2(2000, 2000));
+        ball->getPhysicsBody()->applyImpulse(Vec2(3000, 3000));
         gameState->setBallFree(true);
     }
 }
