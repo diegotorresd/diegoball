@@ -9,6 +9,7 @@
 #include "Paddle.hpp"
 #include "Border.hpp"
 #include "Ball.hpp"
+#include "GameState.hpp"
 
 USING_NS_CC;
 
@@ -19,9 +20,11 @@ Scene* MainScene::createScene()
 
 Node* paddle;
 Node* ball;
+GameState* gameState;
 
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
+    gameState = new GameState();
     getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     
     paddle = Paddle::create();
@@ -41,10 +44,19 @@ bool MainScene::init() {
 }
 
 void MainScene::paddleMoved(Vec2 pos) {
+    if (gameState->isBallFree() == true) return;
     auto currentPos = ball->getPosition();
     ball->setPosition(Vec2(pos.x, currentPos.y));
 }
 
 void MainScene::paddleMoveEnd(float amount) {
-    log("move %f", amount);
+    if (gameState->isBallFree() == false) {
+        log("move %f", amount);
+        ball->getPhysicsBody()->applyImpulse(Vec2(2000, 2000));
+        gameState->setBallFree(true);
+    }
+}
+
+GameState* getGameState() {
+    return gameState;
 }

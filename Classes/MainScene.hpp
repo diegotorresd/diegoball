@@ -9,6 +9,7 @@
 #define MainScene_hpp
 
 #include "cocos2d.h"
+#include "GameState.hpp"
 
 class MainScene : public cocos2d::Scene
 {
@@ -23,6 +24,9 @@ public:
     // paddle callbacks
     void paddleMoved(cocos2d::Vec2 pos);
     void paddleMoveEnd(float amount);
+    
+    // game state
+    GameState* getGameState();
 };
 
 #endif /* MainScene_hpp */
