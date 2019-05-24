@@ -17,6 +17,16 @@
 		05B614A9226DC9C80075F379 /* Border.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05B614A6226DC9C80075F379 /* Border.cpp */; };
 		05CC1C5D2298314900FF89E5 /* Categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C5B2298314900FF89E5 /* Categories.cpp */; };
 		05CC1C5E2298314900FF89E5 /* Categories.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C5B2298314900FF89E5 /* Categories.cpp */; };
+		05CC1C68229841EE00FF89E5 /* brick1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C63229841EE00FF89E5 /* brick1.png */; };
+		05CC1C69229841EE00FF89E5 /* brick1.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C63229841EE00FF89E5 /* brick1.png */; };
+		05CC1C6A229841EE00FF89E5 /* brick0.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C64229841EE00FF89E5 /* brick0.png */; };
+		05CC1C6B229841EE00FF89E5 /* brick0.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C64229841EE00FF89E5 /* brick0.png */; };
+		05CC1C6C229841EE00FF89E5 /* brick4.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C65229841EE00FF89E5 /* brick4.png */; };
+		05CC1C6D229841EE00FF89E5 /* brick4.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C65229841EE00FF89E5 /* brick4.png */; };
+		05CC1C6E229841EE00FF89E5 /* brick2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C66229841EE00FF89E5 /* brick2.png */; };
+		05CC1C6F229841EE00FF89E5 /* brick2.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C66229841EE00FF89E5 /* brick2.png */; };
+		05CC1C70229841EE00FF89E5 /* brick3.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C67229841EE00FF89E5 /* brick3.png */; };
+		05CC1C71229841EE00FF89E5 /* brick3.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C67229841EE00FF89E5 /* brick3.png */; };
 		05E8351922776E92002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05E8351B22776E9E002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05F3BACC226DDD5F00036200 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05F3BACA226DDD5F00036200 /* Ball.cpp */; };
@@ -119,6 +129,11 @@
 		05B614A7226DC9C80075F379 /* Border.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Border.hpp; sourceTree = "<group>"; };
 		05CC1C5B2298314900FF89E5 /* Categories.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Categories.cpp; sourceTree = "<group>"; };
 		05CC1C5C2298314900FF89E5 /* Categories.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Categories.hpp; sourceTree = "<group>"; };
+		05CC1C63229841EE00FF89E5 /* brick1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick1.png; sourceTree = "<group>"; };
+		05CC1C64229841EE00FF89E5 /* brick0.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick0.png; sourceTree = "<group>"; };
+		05CC1C65229841EE00FF89E5 /* brick4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick4.png; sourceTree = "<group>"; };
+		05CC1C66229841EE00FF89E5 /* brick2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick2.png; sourceTree = "<group>"; };
+		05CC1C67229841EE00FF89E5 /* brick3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = brick3.png; sourceTree = "<group>"; };
 		05E8351722776E92002AA963 /* GameState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		05E8351822776E92002AA963 /* GameState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
 		05F3BACA226DDD5F00036200 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -294,6 +309,11 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05CC1C64229841EE00FF89E5 /* brick0.png */,
+				05CC1C63229841EE00FF89E5 /* brick1.png */,
+				05CC1C66229841EE00FF89E5 /* brick2.png */,
+				05CC1C67229841EE00FF89E5 /* brick3.png */,
+				05CC1C65229841EE00FF89E5 /* brick4.png */,
 				05F3BACF226DDDB500036200 /* ball.png */,
 				05B6149A226DBE5F0075F379 /* paddle.png */,
 				521A8EA819F11F5000D177D7 /* fonts */,
@@ -452,14 +472,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				05CC1C70229841EE00FF89E5 /* brick3.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				05CC1C6C229841EE00FF89E5 /* brick4.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
+				05CC1C6A229841EE00FF89E5 /* brick0.png in Resources */,
 				05B6149B226DBE5F0075F379 /* paddle.png in Resources */,
 				3EACC98F19EE6D4300EB3C5E /* res in Resources */,
 				05F3BAD0226DDDB500036200 /* ball.png in Resources */,
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				05CC1C68229841EE00FF89E5 /* brick1.png in Resources */,
+				05CC1C6E229841EE00FF89E5 /* brick2.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -470,10 +495,15 @@
 			files = (
 				46880B8219C43A67006E1F66 /* HelloWorld.png in Resources */,
 				503AE0F817EB97AB00D1A890 /* Icon.icns in Resources */,
+				05CC1C6F229841EE00FF89E5 /* brick2.png in Resources */,
 				3EACC99019EE6D4300EB3C5E /* res in Resources */,
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
+				05CC1C6D229841EE00FF89E5 /* brick4.png in Resources */,
 				05B6149C226DBE5F0075F379 /* paddle.png in Resources */,
+				05CC1C6B229841EE00FF89E5 /* brick0.png in Resources */,
+				05CC1C71229841EE00FF89E5 /* brick3.png in Resources */,
+				05CC1C69229841EE00FF89E5 /* brick1.png in Resources */,
 				05F3BAD1226DDDB500036200 /* ball.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
 			);
