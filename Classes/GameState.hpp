@@ -11,12 +11,18 @@
 class GameState {
     bool _isBallFree;
     int _lives;
+    int _numBricks;
 public:
     GameState();
+    
     bool isBallFree();
     void setBallFree(bool value);
+    
     int getLives();
     void decreaseLives();
+    
+    int getNumBricks();
+    void decreaseNumBricks();
 };
 
 #endif /* GameState_hpp */

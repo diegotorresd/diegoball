@@ -40,7 +40,7 @@ bool MainScene::init() {
     ball = Ball::create();
     addChild(ball);
     
-    brickWall = BrickWall::create();
+    brickWall = BrickWall::create(gameState->getNumBricks());
     addChild(brickWall);
     
     livesText = Label::createWithSystemFont("3", "Arial", 18);
@@ -98,6 +98,12 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
     if (Collisions::isBallWithBrick(bodyA, bodyB)) {
         // remove brick
         bodyB->getNode()->removeFromParentAndCleanup(true);
+        gameState->decreaseNumBricks();
+        if (gameState->getNumBricks() <= 0) {
+            // return to initial scene
+            Director::getInstance()->replaceScene(InitialScene::createScene());
+            return false;
+        }
     }
     return true;
 }
