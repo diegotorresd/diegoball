@@ -10,6 +10,7 @@
 #include "Border.hpp"
 #include "Ball.hpp"
 #include "GameState.hpp"
+#include "Brick.hpp"
 
 USING_NS_CC;
 
@@ -20,6 +21,7 @@ Scene* MainScene::createScene()
 
 Node* paddle;
 Node* ball;
+Node* brick;
 GameState* gameState;
 
 bool MainScene::init() {
@@ -33,6 +35,9 @@ bool MainScene::init() {
     
     ball = Ball::create();
     addChild(ball);
+    
+    brick = Brick::create();
+    addChild(brick);
     
     auto paddleListener = Paddle::createTouchListener(paddle, this);
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(paddleListener, this);

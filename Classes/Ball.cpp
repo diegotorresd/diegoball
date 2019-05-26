@@ -14,7 +14,7 @@ Node* Ball::create() {
     ball->setPosition(240, 20);
     auto pb_ball = PhysicsBody::createCircle(6, PhysicsMaterial(0.1f, 1.0f, 0.01f));
     pb_ball->setCategoryBitmask(Categories::BALL);
-    pb_ball->setCollisionBitmask(Categories::PADDLE | Categories::WALL);
+    pb_ball->setCollisionBitmask(Categories::PADDLE | Categories::WALL | Categories::BRICK);
     ball->addComponent(pb_ball);
     return ball;
 }
