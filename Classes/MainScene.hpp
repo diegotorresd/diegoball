@@ -27,6 +27,9 @@ public:
     
     // game state
     GameState* getGameState();
+    
+    // contact listener
+    bool onContactBegin(cocos2d::PhysicsContact& contact);
 };
 
 #endif /* MainScene_hpp */

@@ -14,9 +14,11 @@ Node* Border::create(Size visibleSize) {
     auto border = Node::create();
     border->setAnchorPoint(Vec2(0, 0));
     border->setPosition(visibleSize / 2.0);
+    pb_border->setTag(Categories::WALL);
     pb_border->setDynamic(false);
     pb_border->setCategoryBitmask(Categories::WALL);
     pb_border->setCollisionBitmask(Categories::BALL | Categories::PADDLE);
+    pb_border->setContactTestBitmask(Categories::BALL);
     border->addComponent(pb_border);
     return border;
 }

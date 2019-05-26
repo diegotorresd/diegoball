@@ -14,6 +14,7 @@ Node* Paddle::create() {
     paddle->setPosition(Vec2(240, 10));
     auto pb_paddle = PhysicsBody::createBox(paddle->getBoundingBox().size, PhysicsMaterial(0.1f, 1.0f, 0.01f));
     pb_paddle->setDynamic(false);
+    pb_paddle->setTag(Categories::PADDLE);
     //pb_paddle->setGravityEnable(true);
     pb_paddle->setCategoryBitmask(Categories::PADDLE);
     pb_paddle->setCollisionBitmask(Categories::BALL | Categories::WALL);

@@ -6,6 +6,7 @@
 //
 
 #include "Brick.hpp"
+#include "Categories.hpp"
 USING_NS_CC;
 
 Node* Brick::create() {
@@ -14,5 +15,6 @@ Node* Brick::create() {
     auto pb_brick = PhysicsBody::createBox(brick->getBoundingBox().size, PhysicsMaterial(0.1f, 1.0f, 0.01f));
     brick->setPhysicsBody(pb_brick);
     pb_brick->setDynamic(false);
+    pb_brick->setTag(Categories::BRICK);
     return brick;
 }

@@ -11,6 +11,7 @@
 #include "Ball.hpp"
 #include "GameState.hpp"
 #include "Brick.hpp"
+#include "Collisions.hpp"
 
 USING_NS_CC;
 
@@ -47,6 +48,10 @@ bool MainScene::init() {
     
     addChild(border);
     
+    auto contactListener = EventListenerPhysicsContact::create();
+    contactListener->onContactBegin = CC_CALLBACK_1(MainScene::onContactBegin, this);
+    _eventDispatcher->addEventListenerWithSceneGraphPriority(contactListener, this);
+    
     return true;
 }
 
@@ -66,4 +71,14 @@ void MainScene::paddleMoveEnd(float amount) {
 
 GameState* getGameState() {
     return gameState;
+}
+
+bool MainScene::onContactBegin(PhysicsContact& contact) {
+    auto bodyA = contact.getShapeA()->getBody();
+    auto bodyB = contact.getShapeB()->getBody();
+    auto points = contact.getContactData()->points;
+    if (Collisions::isBallWithBottom(bodyA, bodyB, points[0])) {
+        log("Bottom!");
+    }
+    return true;
 }
