@@ -11,7 +11,7 @@
 #include "Border.hpp"
 #include "Ball.hpp"
 #include "GameState.hpp"
-#include "Brick.hpp"
+#include "BrickWall.hpp"
 #include "Collisions.hpp"
 #include <stdio.h>
 
@@ -24,7 +24,7 @@ Scene* MainScene::createScene()
 
 Node* paddle;
 Node* ball;
-Node* brick;
+Node* brickWall;
 GameState* gameState;
 Label* livesText;
 
@@ -40,8 +40,8 @@ bool MainScene::init() {
     ball = Ball::create();
     addChild(ball);
     
-    brick = Brick::create();
-    addChild(brick);
+    brickWall = BrickWall::create();
+    addChild(brickWall);
     
     livesText = Label::createWithSystemFont("3", "Arial", 18);
     livesText->setColor(Color3B::ORANGE);

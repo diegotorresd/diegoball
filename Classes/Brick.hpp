@@ -11,7 +11,7 @@
 #include "cocos2d.h"
 class Brick {
 public:
-    static cocos2d::Node* create();
+    static cocos2d::Node* create(int type);
 };
 
 #endif /* Brick_hpp */

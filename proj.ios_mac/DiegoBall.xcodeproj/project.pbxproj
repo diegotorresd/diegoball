@@ -33,6 +33,8 @@
 		05CC1C7D229A99D200FF89E5 /* InitialScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C7A229A99D200FF89E5 /* InitialScene.cpp */; };
 		05CC1C7F229A9D8800FF89E5 /* NewGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C7E229A9D8800FF89E5 /* NewGame.png */; };
 		05CC1C80229A9D8800FF89E5 /* NewGame.png in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C7E229A9D8800FF89E5 /* NewGame.png */; };
+		05CC1C83229AB7E400FF89E5 /* BrickWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C81229AB7E400FF89E5 /* BrickWall.cpp */; };
+		05CC1C84229AB7E400FF89E5 /* BrickWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C81229AB7E400FF89E5 /* BrickWall.cpp */; };
 		05E8351922776E92002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05E8351B22776E9E002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05F3BACC226DDD5F00036200 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05F3BACA226DDD5F00036200 /* Ball.cpp */; };
@@ -146,6 +148,8 @@
 		05CC1C7A229A99D200FF89E5 /* InitialScene.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = InitialScene.cpp; sourceTree = "<group>"; };
 		05CC1C7B229A99D200FF89E5 /* InitialScene.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = InitialScene.hpp; sourceTree = "<group>"; };
 		05CC1C7E229A9D8800FF89E5 /* NewGame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NewGame.png; sourceTree = "<group>"; };
+		05CC1C81229AB7E400FF89E5 /* BrickWall.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = BrickWall.cpp; sourceTree = "<group>"; };
+		05CC1C82229AB7E400FF89E5 /* BrickWall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BrickWall.hpp; sourceTree = "<group>"; };
 		05E8351722776E92002AA963 /* GameState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		05E8351822776E92002AA963 /* GameState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
 		05F3BACA226DDD5F00036200 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -361,6 +365,8 @@
 				05CC1C77229A82D800FF89E5 /* Collisions.hpp */,
 				05CC1C7A229A99D200FF89E5 /* InitialScene.cpp */,
 				05CC1C7B229A99D200FF89E5 /* InitialScene.hpp */,
+				05CC1C81229AB7E400FF89E5 /* BrickWall.cpp */,
+				05CC1C82229AB7E400FF89E5 /* BrickWall.hpp */,
 			);
 			name = Classes;
 			path = ../Classes;
@@ -545,6 +551,7 @@
 				46880B8819C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				1AF87B8A1F6F7822007BE51C /* main.m in Sources */,
 				05E8351922776E92002AA963 /* GameState.cpp in Sources */,
+				05CC1C83229AB7E400FF89E5 /* BrickWall.cpp in Sources */,
 				05CC1C7C229A99D200FF89E5 /* InitialScene.cpp in Sources */,
 				05B614A0226DBEB50075F379 /* MainScene.cpp in Sources */,
 				05CC1C74229A6E4F00FF89E5 /* Brick.cpp in Sources */,
@@ -559,6 +566,7 @@
 				05CC1C7D229A99D200FF89E5 /* InitialScene.cpp in Sources */,
 				46880B8919C43A87006E1F66 /* AppDelegate.cpp in Sources */,
 				05B614A5226DC1480075F379 /* Paddle.cpp in Sources */,
+				05CC1C84229AB7E400FF89E5 /* BrickWall.cpp in Sources */,
 				05B614A1226DBEB50075F379 /* MainScene.cpp in Sources */,
 				05E8351B22776E9E002AA963 /* GameState.cpp in Sources */,
 				05CC1C75229A6E4F00FF89E5 /* Brick.cpp in Sources */,
