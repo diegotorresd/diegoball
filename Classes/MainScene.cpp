@@ -31,7 +31,6 @@ Label* livesText;
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
     gameState = new GameState();
-    getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_ALL);
     getPhysicsWorld()->setGravity(Vec2(0.0f, -0.5f));
     
     paddle = Paddle::create();

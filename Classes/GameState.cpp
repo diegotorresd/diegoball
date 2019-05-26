@@ -10,7 +10,7 @@
 GameState::GameState () {
     _isBallFree = false;
     _lives = 3;
-    _numBricks = 9;
+    _numBricks = 33;
 }
 
 void GameState::setBallFree(bool value) {
