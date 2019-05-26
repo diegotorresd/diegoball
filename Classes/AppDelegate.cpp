@@ -23,7 +23,7 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-#include "MainScene.hpp"
+#include "InitialScene.hpp"
 
 // #define USE_AUDIO_ENGINE 1
 // #define USE_SIMPLE_AUDIO_ENGINE 1
@@ -99,12 +99,11 @@ bool AppDelegate::applicationDidFinishLaunching() {
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
     auto frameSize = glview->getFrameSize();
-    log("framesize: %f x %f", frameSize.width, frameSize.height);
     
     register_all_packages();
 
     // create a scene. it's an autorelease object
-    auto scene = MainScene::createScene();
+    auto scene = InitialScene::createScene();
 
     // run
     director->runWithScene(scene);
