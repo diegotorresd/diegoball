@@ -14,6 +14,8 @@
 #include "BrickWall.hpp"
 #include "Collisions.hpp"
 #include <stdio.h>
+#include "RandomNumber.hpp"
+#include <cmath>
 
 USING_NS_CC;
 
@@ -70,7 +72,9 @@ void MainScene::paddleMoved(Vec2 pos) {
 
 void MainScene::paddleMoveEnd(float amount) {
     if (gameState->isBallFree() == false) {
-        ball->getPhysicsBody()->applyImpulse(Vec2(3000, 3000));
+        float impulse = 3500;
+        float angle = RandomNumber::generate(1.0472, 2.0944);
+        ball->getPhysicsBody()->applyImpulse(Vec2(impulse * cos(angle), impulse * sin(angle)));
         gameState->setBallFree(true);
     }
 }
