@@ -6,6 +6,7 @@
 //
 
 #include "MainScene.hpp"
+#include "InitialScene.hpp"
 #include "Paddle.hpp"
 #include "Border.hpp"
 #include "Ball.hpp"
@@ -25,7 +26,7 @@ Node* paddle;
 Node* ball;
 Node* brick;
 GameState* gameState;
-Label* lives;
+Label* livesText;
 
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
@@ -42,10 +43,10 @@ bool MainScene::init() {
     brick = Brick::create();
     addChild(brick);
     
-    lives = Label::createWithSystemFont("3", "Arial", 18);
-    lives->setColor(Color3B::ORANGE);
-    lives->setPosition(460, 300);
-    addChild(lives);
+    livesText = Label::createWithSystemFont("3", "Arial", 18);
+    livesText->setColor(Color3B::ORANGE);
+    livesText->setPosition(460, 300);
+    addChild(livesText);
     
     auto paddleListener = Paddle::createTouchListener(paddle, this);
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(paddleListener, this);
@@ -85,8 +86,18 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
     auto points = contact.getContactData()->points;
     if (Collisions::isBallWithBottom(bodyA, bodyB, points[0])) {
         gameState->decreaseLives();
-        lives->setString(std::to_string(gameState->getLives()));
+        int numLives = gameState->getLives();
+        if (numLives <= 0) {
+            // return to initial scene
+            Director::getInstance()->replaceScene(InitialScene::createScene());
+            return false;
+        }
+        livesText->setString(std::to_string(numLives));
         resetGame();
+    }
+    if (Collisions::isBallWithBrick(bodyA, bodyB)) {
+        // remove brick
+        bodyB->getNode()->removeFromParentAndCleanup(true);
     }
     return true;
 }

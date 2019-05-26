@@ -14,3 +14,8 @@ bool Collisions::isBallWithBottom(PhysicsBody* bodyA, PhysicsBody* bodyB, Vec2 c
             && bodyB->getTag() == Categories::WALL
             && collisionPoint.y <= 1.0f);
 }
+
+bool Collisions::isBallWithBrick(PhysicsBody* bodyA, PhysicsBody* bodyB) {
+    return (bodyA->getTag() == Categories::BALL
+            && bodyB->getTag() == Categories::BRICK);
+}
