@@ -30,6 +30,8 @@ public:
     
     // contact listener
     bool onContactBegin(cocos2d::PhysicsContact& contact);
+private:
+    void resetGame();
 };
 
 #endif /* MainScene_hpp */

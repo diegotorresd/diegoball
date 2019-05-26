@@ -12,6 +12,7 @@
 #include "GameState.hpp"
 #include "Brick.hpp"
 #include "Collisions.hpp"
+#include <stdio.h>
 
 USING_NS_CC;
 
@@ -24,6 +25,7 @@ Node* paddle;
 Node* ball;
 Node* brick;
 GameState* gameState;
+Label* lives;
 
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
@@ -39,6 +41,11 @@ bool MainScene::init() {
     
     brick = Brick::create();
     addChild(brick);
+    
+    lives = Label::createWithSystemFont("3", "Arial", 18);
+    lives->setColor(Color3B::ORANGE);
+    lives->setPosition(460, 300);
+    addChild(lives);
     
     auto paddleListener = Paddle::createTouchListener(paddle, this);
     getEventDispatcher()->addEventListenerWithSceneGraphPriority(paddleListener, this);
@@ -63,7 +70,6 @@ void MainScene::paddleMoved(Vec2 pos) {
 
 void MainScene::paddleMoveEnd(float amount) {
     if (gameState->isBallFree() == false) {
-        log("move %f", amount);
         ball->getPhysicsBody()->applyImpulse(Vec2(3000, 3000));
         gameState->setBallFree(true);
     }
@@ -78,7 +84,17 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
     auto bodyB = contact.getShapeB()->getBody();
     auto points = contact.getContactData()->points;
     if (Collisions::isBallWithBottom(bodyA, bodyB, points[0])) {
-        log("Bottom!");
+        gameState->decreaseLives();
+        lives->setString(std::to_string(gameState->getLives()));
+        resetGame();
     }
     return true;
+}
+
+void MainScene::resetGame() {
+    paddle->setPosition(240, 10);
+    ball->removeFromParentAndCleanup(true);
+    ball = Ball::create();
+    addChild(ball);
+    gameState->setBallFree(false);
 }
