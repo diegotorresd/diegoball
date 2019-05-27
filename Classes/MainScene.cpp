@@ -92,6 +92,7 @@ void goToMainScene(bool winning) {
     auto sceneType = winning ?
         InitialScene::SceneType::YOU_WIN :
         InitialScene::SceneType::GAME_OVER;
+    log("sending scene type %d", sceneType);
     auto scene = InitialScene::createScene(sceneType);
     auto transition = TransitionFade::create(3, scene, Color3B(0, 0, 0));
     Director::getInstance()->replaceScene(transition);

@@ -23,6 +23,10 @@ public:
     
     // implement the "static create()" method manually
     CREATE_FUNC(InitialScene);
+        
+    void setSceneType(SceneType sceneType);
+private:
+    SceneType _sceneType;
 };
 
 #endif /* InitialScene_hpp */
