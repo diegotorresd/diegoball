@@ -19,3 +19,8 @@ bool Collisions::isBallWithBrick(PhysicsBody* bodyA, PhysicsBody* bodyB) {
     return (bodyA->getTag() == Categories::BALL
             && bodyB->getTag() == Categories::BRICK);
 }
+
+bool Collisions::isBallWithPaddle(PhysicsBody* bodyA, PhysicsBody* bodyB) {
+    return (bodyA->getTag() == Categories::BALL
+            && bodyB->getTag() == Categories::PADDLE);
+}

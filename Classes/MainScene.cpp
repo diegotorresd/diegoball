@@ -16,8 +16,10 @@
 #include <stdio.h>
 #include "RandomNumber.hpp"
 #include <cmath>
+#include "SimpleAudioEngine.h"
 
 USING_NS_CC;
+using namespace CocosDenshion;
 
 Scene* MainScene::createScene()
 {
@@ -30,8 +32,11 @@ Node* brickWall;
 GameState* gameState;
 Label* livesText;
 
+SimpleAudioEngine* audio;
+
 bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
+    audio = SimpleAudioEngine::getInstance();
     gameState = new GameState();
     getPhysicsWorld()->setGravity(Vec2(0.0f, -0.5f));
     
@@ -97,6 +102,7 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
             return false;
         }
         livesText->setString(std::to_string(numLives));
+        audio->playEffect("error.wav");
         resetGame();
     }
     if (Collisions::isBallWithBrick(bodyA, bodyB)) {
@@ -110,6 +116,10 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
+        audio->playEffect("correct.mp3");
+    }
+    if (Collisions::isBallWithPaddle(bodyA, bodyB)) {
+        audio->playEffect("thump.wav");
     }
     return true;
 }

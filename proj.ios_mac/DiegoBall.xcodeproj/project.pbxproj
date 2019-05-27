@@ -37,6 +37,12 @@
 		05CC1C84229AB7E400FF89E5 /* BrickWall.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C81229AB7E400FF89E5 /* BrickWall.cpp */; };
 		05CC1C87229AC4D500FF89E5 /* RandomNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C85229AC4D500FF89E5 /* RandomNumber.cpp */; };
 		05CC1C88229AC4D500FF89E5 /* RandomNumber.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05CC1C85229AC4D500FF89E5 /* RandomNumber.cpp */; };
+		05CC1C8A229BCE8D00FF89E5 /* thump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C89229BCE8C00FF89E5 /* thump.wav */; };
+		05CC1C8B229BCE8D00FF89E5 /* thump.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C89229BCE8C00FF89E5 /* thump.wav */; };
+		05CC1C8E229BD49D00FF89E5 /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C8C229BD49D00FF89E5 /* error.wav */; };
+		05CC1C8F229BD49D00FF89E5 /* error.wav in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C8C229BD49D00FF89E5 /* error.wav */; };
+		05CC1C90229BD49D00FF89E5 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C8D229BD49D00FF89E5 /* correct.mp3 */; };
+		05CC1C91229BD49D00FF89E5 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 05CC1C8D229BD49D00FF89E5 /* correct.mp3 */; };
 		05E8351922776E92002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05E8351B22776E9E002AA963 /* GameState.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05E8351722776E92002AA963 /* GameState.cpp */; };
 		05F3BACC226DDD5F00036200 /* Ball.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 05F3BACA226DDD5F00036200 /* Ball.cpp */; };
@@ -154,6 +160,9 @@
 		05CC1C82229AB7E400FF89E5 /* BrickWall.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = BrickWall.hpp; sourceTree = "<group>"; };
 		05CC1C85229AC4D500FF89E5 /* RandomNumber.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = RandomNumber.cpp; sourceTree = "<group>"; };
 		05CC1C86229AC4D500FF89E5 /* RandomNumber.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = RandomNumber.hpp; sourceTree = "<group>"; };
+		05CC1C89229BCE8C00FF89E5 /* thump.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thump.wav; sourceTree = "<group>"; };
+		05CC1C8C229BD49D00FF89E5 /* error.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = error.wav; sourceTree = "<group>"; };
+		05CC1C8D229BD49D00FF89E5 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		05E8351722776E92002AA963 /* GameState.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = GameState.cpp; sourceTree = "<group>"; };
 		05E8351822776E92002AA963 /* GameState.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = GameState.hpp; sourceTree = "<group>"; };
 		05F3BACA226DDD5F00036200 /* Ball.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Ball.cpp; sourceTree = "<group>"; };
@@ -329,6 +338,9 @@
 		46880B7519C43A67006E1F66 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				05CC1C8D229BD49D00FF89E5 /* correct.mp3 */,
+				05CC1C8C229BD49D00FF89E5 /* error.wav */,
+				05CC1C89229BCE8C00FF89E5 /* thump.wav */,
 				05CC1C7E229A9D8800FF89E5 /* NewGame.png */,
 				05CC1C64229841EE00FF89E5 /* brick0.png */,
 				05CC1C63229841EE00FF89E5 /* brick1.png */,
@@ -502,10 +514,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				46880B8119C43A67006E1F66 /* HelloWorld.png in Resources */,
+				05CC1C90229BD49D00FF89E5 /* correct.mp3 in Resources */,
 				05CC1C70229841EE00FF89E5 /* brick3.png in Resources */,
 				05CC1C7F229A9D8800FF89E5 /* NewGame.png in Resources */,
 				1A88B2641FC3D9C9005C14AE /* Images.xcassets in Resources */,
 				46880B7D19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				05CC1C8E229BD49D00FF89E5 /* error.wav in Resources */,
 				05CC1C6C229841EE00FF89E5 /* brick4.png in Resources */,
 				521A8EA919F11F5000D177D7 /* fonts in Resources */,
 				05CC1C6A229841EE00FF89E5 /* brick0.png in Resources */,
@@ -515,6 +529,7 @@
 				1AF87B891F6F781D007BE51C /* LaunchScreenBackground.png in Resources */,
 				46880B7B19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				05CC1C68229841EE00FF89E5 /* brick1.png in Resources */,
+				05CC1C8A229BCE8D00FF89E5 /* thump.wav in Resources */,
 				05CC1C6E229841EE00FF89E5 /* brick2.png in Resources */,
 				1AF87B881F6F781D007BE51C /* LaunchScreen.storyboard in Resources */,
 			);
@@ -531,13 +546,16 @@
 				521A8EAA19F11F5000D177D7 /* fonts in Resources */,
 				46880B7C19C43A67006E1F66 /* CloseNormal.png in Resources */,
 				05CC1C80229A9D8800FF89E5 /* NewGame.png in Resources */,
+				05CC1C91229BD49D00FF89E5 /* correct.mp3 in Resources */,
 				05CC1C6D229841EE00FF89E5 /* brick4.png in Resources */,
+				05CC1C8B229BCE8D00FF89E5 /* thump.wav in Resources */,
 				05B6149C226DBE5F0075F379 /* paddle.png in Resources */,
 				05CC1C6B229841EE00FF89E5 /* brick0.png in Resources */,
 				05CC1C71229841EE00FF89E5 /* brick3.png in Resources */,
 				05CC1C69229841EE00FF89E5 /* brick1.png in Resources */,
 				05F3BAD1226DDDB500036200 /* ball.png in Resources */,
 				46880B7E19C43A67006E1F66 /* CloseSelected.png in Resources */,
+				05CC1C8F229BD49D00FF89E5 /* error.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

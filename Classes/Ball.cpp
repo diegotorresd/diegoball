@@ -16,7 +16,7 @@ Node* Ball::create() {
     pb_ball->setTag(Categories::BALL);
     pb_ball->setCategoryBitmask(Categories::BALL);
     pb_ball->setCollisionBitmask(Categories::PADDLE | Categories::WALL | Categories::BRICK);
-    pb_ball->setContactTestBitmask(Categories::WALL | Categories::BRICK);
+    pb_ball->setContactTestBitmask(Categories::PADDLE | Categories::WALL | Categories::BRICK);
     ball->addComponent(pb_ball);
     return ball;
 }
