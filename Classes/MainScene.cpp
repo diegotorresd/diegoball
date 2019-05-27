@@ -78,7 +78,7 @@ void MainScene::paddleMoved(Vec2 pos) {
 void MainScene::paddleMoveEnd(float amount) {
     if (gameState->isBallFree() == false) {
         float impulse = 3500;
-        float angle = RandomNumber::generate(1.0472, 2.0944);
+        float angle = RandomNumber::generate(1.0472, 2.0944); // PI/3 - 2*PI/3
         ball->getPhysicsBody()->applyImpulse(Vec2(impulse * cos(angle), impulse * sin(angle)));
         gameState->setBallFree(true);
     }
@@ -110,16 +110,16 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         bodyB->getNode()->removeFromParentAndCleanup(true);
         gameState->decreaseNumBricks();
         int numBricks = gameState->getNumBricks();
-        if (numBricks % 5 == 0) {
-            auto move = MoveBy::create(0.5f, Vec2(0, -15));
-            brickWall->runAction(move);
-        }
         if (numBricks <= 0) {
             // return to initial scene
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
         audio->playEffect("correct.mp3");
+        if (numBricks % 5 == 0) {
+            auto move = MoveBy::create(0.5f, Vec2(0, -15));
+            brickWall->runAction(move);
+        }
         return true;
     }
     if (Collisions::isBallWithPaddle(bodyA, bodyB) && gameState->isBallFree() == true) {

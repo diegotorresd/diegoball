@@ -12,7 +12,16 @@ USING_NS_CC;
 Node* Paddle::create() {
     auto paddle = Sprite::create("paddle.png");
     paddle->setPosition(Vec2(240, 10));
-    auto pb_paddle = PhysicsBody::createBox(paddle->getBoundingBox().size, PhysicsMaterial(0.1f, 1.0f, 0.01f));
+    auto pm = PhysicsMaterial(0.1f, 1.0f, 0.01f);
+    Vec2 points[] = {
+        Vec2(-30, -8),
+        Vec2(30, -8),
+        Vec2(30, 4),
+        Vec2(10, 8),
+        Vec2(-10, 8),
+        Vec2(-30, 4)
+    };
+    auto pb_paddle = PhysicsBody::createPolygon(points, 6, pm);
     pb_paddle->setDynamic(false);
     pb_paddle->setTag(Categories::PADDLE);
     pb_paddle->setCategoryBitmask(Categories::PADDLE);
