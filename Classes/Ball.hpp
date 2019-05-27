@@ -12,7 +12,7 @@
 
 class Ball {
 public:
-    static cocos2d::Node* create();
+    static cocos2d::Node* create(cocos2d::Vec2 paddlePos);
 };
 
 #endif /* Ball_hpp */

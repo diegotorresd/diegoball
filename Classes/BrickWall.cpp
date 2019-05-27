@@ -14,7 +14,7 @@ Node* BrickWall::create(int numBricks) {
     int h = 16; // px
     int n = 11; // bricks per row
     float left = (480 - w * (n - 1)) / 2;
-    float top = 240;
+    float top = 260;
     auto node = Node::create();
     node->setCascadeOpacityEnabled(true);
     for (int i = 0; i < numBricks; i++) {

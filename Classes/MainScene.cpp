@@ -38,12 +38,12 @@ bool MainScene::init() {
     if (!Scene::initWithPhysics()) return false;
     audio = SimpleAudioEngine::getInstance();
     gameState = new GameState();
-    getPhysicsWorld()->setGravity(Vec2(0.0f, -0.5f));
+    getPhysicsWorld()->setGravity(Vec2(0.0f, -1.5f));
     
     paddle = Paddle::create();
     addChild(paddle);
     
-    ball = Ball::create();
+    ball = Ball::create(paddle->getPosition());
     addChild(ball);
     
     brickWall = BrickWall::create(gameState->getNumBricks());
@@ -97,13 +97,13 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         int numLives = gameState->getLives();
         if (numLives == 0) {
             // return to initial scene
-            log("numlives = %d, redirecting", numLives);
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
         livesText->setString(std::to_string(numLives));
         audio->playEffect("error.wav");
         resetGame();
+        return true;
     }
     if (Collisions::isBallWithBrick(bodyA, bodyB)) {
         // remove brick
@@ -116,14 +116,15 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         }
         if (numBricks <= 0) {
             // return to initial scene
-            log("numbricks = %d, redirecting", numBricks);
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
         audio->playEffect("correct.mp3");
+        return true;
     }
-    if (Collisions::isBallWithPaddle(bodyA, bodyB)) {
+    if (Collisions::isBallWithPaddle(bodyA, bodyB) && gameState->isBallFree() == true) {
         audio->playEffect("thump.wav");
+        return true;
     }
     return true;
 }
@@ -134,7 +135,7 @@ void MainScene::resetGame() {
     auto fadeIn = FadeTo::create(1.0f, 255);
     auto fadeOut = FadeTo::create(1.0f, 1);
     auto callback = CallFunc::create([&]() {
-        ball = Ball::create();
+        ball = Ball::create(paddle->getPosition());
         addChild(ball);
         gameState->setBallFree(false);
     });

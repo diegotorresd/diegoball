@@ -12,7 +12,7 @@ USING_NS_CC;
 
 Node* Brick::create(int type) {
     auto brick = Sprite::create("brick" + std::to_string(type) + ".png");
-    auto pb_brick = PhysicsBody::createBox(brick->getBoundingBox().size, PhysicsMaterial(0.1f, 1.0f, 0.01f));
+    auto pb_brick = PhysicsBody::createBox(brick->getBoundingBox().size, PhysicsMaterial(0.1f, 1.01f, 0.01f));
     brick->setPhysicsBody(pb_brick);
     pb_brick->setDynamic(false);
     pb_brick->setTag(Categories::BRICK);
