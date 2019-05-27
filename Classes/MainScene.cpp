@@ -110,6 +110,10 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         bodyB->getNode()->removeFromParentAndCleanup(true);
         gameState->decreaseNumBricks();
         int numBricks = gameState->getNumBricks();
+        if (numBricks % 5 == 0) {
+            auto move = MoveBy::create(0.5f, Vec2(0, -15));
+            brickWall->runAction(move);
+        }
         if (numBricks <= 0) {
             // return to initial scene
             log("numbricks = %d, redirecting", numBricks);
