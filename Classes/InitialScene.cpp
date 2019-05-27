@@ -11,7 +11,7 @@ USING_NS_CC;
 #include "ui/CocosGUI.h"
 using namespace cocos2d::ui;
 
-Scene* InitialScene::createScene() {
+Scene* InitialScene::createScene(SceneType sceneType) {
     return InitialScene::create();
 }
 

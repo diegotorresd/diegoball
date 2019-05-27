@@ -12,7 +12,12 @@
 
 class InitialScene : public cocos2d::Scene {
 public:
-    static cocos2d::Scene* createScene();
+    enum class SceneType : int {
+        NORMAL = 0,
+        GAME_OVER = 1,
+        YOU_WIN = 2
+    };
+    static cocos2d::Scene* createScene(SceneType sceneType);
     
     virtual bool init();
     

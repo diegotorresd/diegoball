@@ -88,6 +88,15 @@ GameState* getGameState() {
     return gameState;
 }
 
+void goToMainScene(bool winning) {
+    auto sceneType = winning ?
+        InitialScene::SceneType::YOU_WIN :
+        InitialScene::SceneType::GAME_OVER;
+    auto scene = InitialScene::createScene(sceneType);
+    auto transition = TransitionFade::create(3, scene, Color3B(0, 0, 0));
+    Director::getInstance()->replaceScene(transition);
+}
+
 bool MainScene::onContactBegin(PhysicsContact& contact) {
     auto bodyA = contact.getShapeA()->getBody();
     auto bodyB = contact.getShapeB()->getBody();
@@ -96,8 +105,8 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         gameState->decreaseLives();
         int numLives = gameState->getLives();
         if (numLives == 0) {
-            // return to initial scene
-            Director::getInstance()->replaceScene(InitialScene::createScene());
+            // game over
+            goToMainScene(false);
             return false;
         }
         livesText->setString(std::to_string(numLives));
@@ -111,8 +120,8 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         gameState->decreaseNumBricks();
         int numBricks = gameState->getNumBricks();
         if (numBricks <= 0) {
-            // return to initial scene
-            Director::getInstance()->replaceScene(InitialScene::createScene());
+            // player wins
+            goToMainScene(true);
             return false;
         }
         audio->playEffect("correct.mp3");
@@ -128,6 +137,7 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
     }
     return true;
 }
+
 
 void MainScene::resetGame() {
     paddle->setPosition(240, 10);
