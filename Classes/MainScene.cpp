@@ -44,7 +44,7 @@ bool MainScene::init() {
     brickWall = BrickWall::create(gameState->getNumBricks());
     addChild(brickWall);
     
-    livesText = Label::createWithSystemFont("3", "Arial", 18);
+    livesText = Label::createWithSystemFont(std::to_string(gameState->getLives()), "Arial", 18);
     livesText->setColor(Color3B::ORANGE);
     livesText->setPosition(460, 300);
     addChild(livesText);
@@ -90,8 +90,9 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
     if (Collisions::isBallWithBottom(bodyA, bodyB, points[0])) {
         gameState->decreaseLives();
         int numLives = gameState->getLives();
-        if (numLives <= 0) {
+        if (numLives == 0) {
             // return to initial scene
+            log("numlives = %d, redirecting", numLives);
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
@@ -102,8 +103,10 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
         // remove brick
         bodyB->getNode()->removeFromParentAndCleanup(true);
         gameState->decreaseNumBricks();
-        if (gameState->getNumBricks() <= 0) {
+        int numBricks = gameState->getNumBricks();
+        if (numBricks <= 0) {
             // return to initial scene
+            log("numbricks = %d, redirecting", numBricks);
             Director::getInstance()->replaceScene(InitialScene::createScene());
             return false;
         }
@@ -114,7 +117,13 @@ bool MainScene::onContactBegin(PhysicsContact& contact) {
 void MainScene::resetGame() {
     paddle->setPosition(240, 10);
     ball->removeFromParentAndCleanup(true);
-    ball = Ball::create();
-    addChild(ball);
-    gameState->setBallFree(false);
+    auto fadeIn = FadeTo::create(1.0f, 255);
+    auto fadeOut = FadeTo::create(1.0f, 1);
+    auto callback = CallFunc::create([&]() {
+        ball = Ball::create();
+        addChild(ball);
+        gameState->setBallFree(false);
+    });
+    auto seq = Sequence::create(fadeOut, fadeIn, callback, NULL);
+    brickWall->runAction(seq);
 }

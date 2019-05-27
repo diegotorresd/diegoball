@@ -16,11 +16,14 @@ Node* BrickWall::create(int numBricks) {
     float left = (480 - w * (n - 1)) / 2;
     float top = 240;
     auto node = Node::create();
+    node->setCascadeOpacityEnabled(true);
     for (int i = 0; i < numBricks; i++) {
         auto brick = Brick::create(i % 5);
         int row = i % n;
         int col = i / n;
-        brick->setPosition(Vec2(left + w * row, top - h * col));
+        float dl = (col % 2) * (w / 2);
+        brick->setPosition(Vec2(left + dl + w * row, top - h * col));
+        brick->setCascadeOpacityEnabled(true);
         node->addChild(brick);
     }
     return node;
